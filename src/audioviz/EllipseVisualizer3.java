@@ -77,11 +77,11 @@ public class EllipseVisualizer3 implements Visualizer {
             Ellipse ellipse = new Ellipse();
             
             
-            ellipse.setCenterX(width/8+cos(i*3.14/180)*width/2);
-            ellipse.setCenterY(height/8+sin(i*3.14/180)*width/2);
+            ellipse.setCenterX(width/2+cos(360/numBands*i*3.14/180)*(height/3)+2*minEllipseRadius);
+            ellipse.setCenterY(height/2+sin(360/numBands*i*3.14/180)*(height/3)+2*minEllipseRadius);
             
             
-            ellipse.setRadiusX(bandWidth / 2);
+            ellipse.setRadiusX(minEllipseRadius);
             ellipse.setRadiusY(minEllipseRadius);
             ellipse.setFill(Color.hsb(startHue, 1.0, 1.0, 1.0));
             vizPane.getChildren().add(ellipse);
@@ -111,9 +111,9 @@ public class EllipseVisualizer3 implements Visualizer {
         Integer num = min(ellipses.length, magnitudes.length);
         
         for (int i = 0; i < num; i++) {
-            ellipses[i].setRadiusY( ((60.0 + magnitudes[i])/60.0) * halfBandHeight + minEllipseRadius);
+            //ellipses[i].setRadiusY( ((60.0 + magnitudes[i])/60.0) * halfBandHeight + minEllipseRadius);
             ellipses[i].setFill(Color.hsb(startHue - (magnitudes[i] * -6.0), 1.0, 1.0, 1.0));
-            ellipses[i].setRotate(phases[i] * rotatePhaseMultiplier);
+           // ellipses[i].setRotate(phases[i] * rotatePhaseMultiplier);
         }
         Double hue = ((60.0 + magnitudes[0])/60.0) * 360;
         vizPane.setStyle("-fx-background-color: hsb(" + hue + ", 20%, 100%)" );//change backfroud color
