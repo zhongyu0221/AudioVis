@@ -130,6 +130,13 @@ public class EllipseVisualizer2 implements Visualizer {
             }
             ellipses2 = null;
         }
+        
+         if (ellipses3 != null) {
+            for (Ellipse ellipse : ellipses3) {
+                vizPane.getChildren().remove(ellipse);
+            }
+            ellipses3 = null;
+        }
     }
 
     @Override
@@ -164,7 +171,7 @@ public class EllipseVisualizer2 implements Visualizer {
         }
         Integer num3 = min(ellipses2.length, magnitudes.length);
         for (int i = 0; i < num; i++) {
-            ellipses3[i].setRadiusX(((60.0 + magnitudes[i]) / 60.0) *bandWidthcol/2 + minEllipseRadius);
+            ellipses3[i].setRadiusX(((60.0 + magnitudes[i]) / 60.0) *bandWidthcol/4 + minEllipseRadius);
             ellipses3[i].setFill(Color.hsb(startHuecol - (magnitudes[i] * -6.0), 1.0, 1.0, 1.0));
             ellipses3[i].setRotate(phases[i] * rotatePhaseMultiplier);
         }

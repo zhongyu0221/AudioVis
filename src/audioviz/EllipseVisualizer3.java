@@ -37,7 +37,7 @@ public class EllipseVisualizer3 implements Visualizer {
     private Double bandHeight = 0.0;
     private Double halfBandHeight = 0.0;
     
-    private final Double startHue = 100.0;
+    private final Double startHue = 500.0;
     
     private Ellipse[] ellipses;
     
@@ -77,7 +77,7 @@ public class EllipseVisualizer3 implements Visualizer {
             Ellipse ellipse = new Ellipse();
             
             
-            ellipse.setCenterX(width/2+cos(360/numBands*i*3.14/180)*(height/2.1));
+            ellipse.setCenterX(width/2+cos(((int)360/numBands)*i*3.14/180)*(height/2.1));
             ellipse.setCenterY(height/2+sin(360/numBands*i*3.14/180)*(height/2.1));
             
             
