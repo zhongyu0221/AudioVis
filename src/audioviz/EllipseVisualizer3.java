@@ -19,7 +19,7 @@ import javafx.scene.shape.Rectangle;
  */
 public class EllipseVisualizer3 implements Visualizer {
     
-    private final String name = "Ellipse Visualizer 3";
+    private final String name = "Mode 3 ( not work for 100 and 140 bands";
     
     private Integer numBands;
     private AnchorPane vizPane;
@@ -37,7 +37,7 @@ public class EllipseVisualizer3 implements Visualizer {
     private Double bandHeight = 0.0;
     private Double halfBandHeight = 0.0;
     
-    private final Double startHue = 260.0;
+    private final Double startHue = 100.0;
     
     private Ellipse[] ellipses;
     
@@ -77,8 +77,8 @@ public class EllipseVisualizer3 implements Visualizer {
             Ellipse ellipse = new Ellipse();
             
             
-            ellipse.setCenterX(width/2+cos(360/numBands*i*3.14/180)*(height/3)+2*minEllipseRadius);
-            ellipse.setCenterY(height/2+sin(360/numBands*i*3.14/180)*(height/3)+2*minEllipseRadius);
+            ellipse.setCenterX(width/2+cos(360/numBands*i*3.14/180)*(height/2.1));
+            ellipse.setCenterY(height/2+sin(360/numBands*i*3.14/180)*(height/2.1));
             
             
             ellipse.setRadiusX(minEllipseRadius);

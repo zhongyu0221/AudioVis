@@ -16,7 +16,7 @@ import javafx.scene.shape.Ellipse;
  */
 public class EllipseVisualizer1 implements Visualizer {
 
-    private final String name = "Ellipse Visualizer 1";
+    private final String name = "Mode 1";
 
     private Integer numBands;
 
